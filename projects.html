@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--
+  PROJECTS PAGE. Each project has an id (e.g. id="vr-capstone") so the home page
+  can link straight to it with  projects.html#vr-capstone.
+  
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Anushka Sooriyaarachchi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← back home</a>
+    <h1 style="font-size:38px;margin-bottom:28px;">Projects</h1>
+
+    <section class="detail" id="vr-capstone">
+      <h2>Nature-based VR for Relaxation</h2>
+      <p>
+		I went looking for a capstone and found one I wanted to do, a nature-based VR relaxation study 
+		being run by a lecturer I'd had earlier in my degree. They were vetting students before taking 
+		anyone on, so I applied, did the interview, and got the spot because of the previous VR work 
+		I'd already done in Unreal Engine. 
+	  </p>
+	  <p>
+		What I liked about it was the goal: a low-cost VR experience
+		,built by one person, that could give a bit of nature to people who have none of it, like 
+		astronauts, Antarctic crews and people in care homes. This full version was too much for an 
+		honours timeline, so I narrowed the study down to international students, who deal with their 
+		own kind of isolation, and left the harder settings as the longer-term goal for the research.
+      </p>
+		<div class="img-row">
+		  <figure>
+			<img class="smallimg" src="images/sketch.png" alt="Initial sketching used to help visualize the creation">
+			<figcaption>Pic 1: Initial sketch, as an idea for the general layout </figcaption>
+		  </figure>
+		  <figure>
+			<img class="smallimg" src="images/lowfi.png" alt="Initial design of the starting environment">
+			<figcaption>Pic 2: Map blockout featuring several attached assets. </figcaption>
+		  </figure>
+		</div>
+      <p>
+		The first stretch was mostly reading, getting across what nature does for stress, which design 
+		choices actually change the result, and where the existing VR experiences fall short. That fed into
+		a feasibility study, with early sketches and a small test scene to see if the idea could hold up. 
+		The build that came out of it is a two-scene experience in Unreal Engine 5. It starts in a small
+		, closed-in cave, then as the user moves through, opens out into rural Australian bushland. 
+      </p>	
+	  <p>
+		I chose the animals and plants with feedback from Indigenous knowledge holders at Deakin's NIKERI institute
+		, and kept clear of sacred sites and introduced species, since the experience was meant to feel like real 
+		rural Australia. The rest was the slower work: a custom movement system instead of the default teleport, 
+		audio I recorded and cleaned up into full 360-degree sound, and comfort features like timed pauses, fade 
+		transitions, visible hands to limit motion sickness and a storyline involving ants with custom pathing.
+      </p>
+		<div class="img-row">
+		  <figure>
+			<img class="smallimg" src="images/nvrschem2.png" alt="In green visuals of, area which allows pathing for kangaroos">
+			<figcaption>Pic 3: Area the pathing algorithm lets kangaroos move </figcaption>
+		  </figure>
+		  <figure>
+			<img class="smallimg" src="images/blueprints2.png" alt="Visuals of Initial design of the starting environment">
+			<figcaption>Pic 4: Unreal engine's alternative, Visual coding system. </figcaption>
+		  </figure>
+		</div>
+      <p>
+		Despite seeming like a issueless development cycle, it was anything but the case. Unreal's water plugin 
+		kept throwing shader conflicts in VR, so I gave up on it and rebuilt the water by hand as a custom material 
+		on a flat plane. A climbing feature I'd prototyped made early testers feel sick, so it got cut. 
+	  </p>	
+	  <p>
+		Turning the pixel density back up for a sharper image sent the frame rate into single digits, which is what 
+		pushed me to split the world into two baked scenes that load separately. Even the ethics side became a hurdle 
+		of its own, since the study was flagged high-risk over cybersickness and tripping hazards, and I had to 
+		argue it back down to low-risk before I could test anyone.
+      </p>
+	  
+	  <!-- Add 2 videos instead -->
+	  
+	  
+		<div class="img-row">
+		  <figure>
+			<img class="smallimg" src="images/vrstart2.png" alt="Visuals of starting environment of VR experience">
+			<figcaption>Pic x: Initial starting environment of VR experience </figcaption>
+		  </figure>
+		<figure>
+		  <video class="smallimg" autoplay loop muted playsinline alt="Video of VR Cave Environment">
+		  <source src="videos/vrin.mp4" type="video/mp4">
+		 </video>
+		<figcaption>vid x: Cave environment created for VR experience. </figcaption>
+	    </figure>
+		  
+		</div>
+      <p>
+		With ethics cleared, I ran 25 international students through the same protocol, with a questionnaire before 
+		and after a roughly ten-minute session in the headset and a short interview at the end. The results came out
+		positive, though I'd read them as promising rather than conclusive. 
+	  </p>	
+	  <p>		
+		Self-reported stress dropped 37% and anxiety 33%, both past the 20% that counts as clinically meaningful, and 
+		presence landed at 71% on the IPQ, inside the acceptable band, with median satisfaction at 8 out of 10. 
+		Everyone also finished under the fifteen-minute limit set to keep cybersickness down. Given the small, fairly 
+		similar group of students and the lack of a control group, it isn't proof on its own, but it was a good early result.
+      </p>
+		<div class="img-row">
+		  <figure>
+		    <video class="smallimg" autoplay loop muted playsinline alt="Video of Rural Australian VR Environment">
+		     <source src="videos/vrout.mp4" type="video/mp4">
+		    </video>
+		   <figcaption>vid x: Rural Australian environment created for VR experience. </figcaption>
+	      </figure>
+		
+		  <figure>
+			<img class="smallimg" src="images/nvrdesign3.png" alt="Visuals of VR rural Australian segment of VR experience">
+			<figcaption>Pic x: Part of the rural Australian VR environment </figcaption>
+		  </figure>
+		  
+		</div>
+	   <p>
+		The findings were presented at the 76th International Astronautical Congress in Sydney, though I couldn't be 
+		there for it, and were later published, with several of the researchers who'd advised the build among the 
+		co-authors. My part wrapped up there, and the data, documentation and evaluation protocol it produced were 
+		left for current and future VR researchers to use as they design and improve their own experiences.
+      </p>
+	  </h3> Publications enabled by the project </h3>
+	  <p>
+		<a href="https://dro.deakin.edu.au/articles/conference_contribution/Towards_a_Transdisciplinary_Framework_Informed_by_Indigenous_Knowledges_to_Design_Restorative_Extended_Reality_Experiences_for_Alleviating_Isolation_on_Space_Missions/28405802"> i) Towards a Transdisciplinary Framework Informed by Indigenous Knowledges to Design Restorative Extended Reality Experiences for Alleviating Isolation on Space Missions</a>
+	  </p>
+	  <p>
+		<a href="https://dro.deakin.edu.au/articles/conference_contribution/Implementing_Indigenous_Knowledges-Informed_Extended_Reality_to_Enhance_Psychological_Resilience_in_Space_R_D_And_Earth-Based_Applications_A_Follow-Up_Study/31064023">ii) Implementing Indigenous Knowledges-Informed Extended Reality to Enhance Psychological Resilience in Space R&D And Earth-Based Applications: A Follow-Up Study</a>
+	  </p>
+		<div class="img-row">
+		  <figure>
+			<img class="largeimg" src="images/researchteam.jpg" alt="Part of the research team">
+			<figcaption>Pic 7: Part of the research team for the broader project </figcaption>
+		  </figure>
+		</div>
+    </section>
+
+	<!-- Vary Text lengths for both sections and redo persona -->
+    <section class="detail" id="solar">
+      <h2>Bridgestone World Solar Challenge 2025</h2>
+		<div class="img-row">
+		  <figure>
+			<img class="largeimg" src="images/bwsc1.jpg" alt="DUST Solar car stopped for the day in the outback">
+			<figcaption>Pic 1: DUST Solar car stopped for the day in the outback </figcaption>
+		  </figure>
+		</div>
+	  <p class ="stage">
+		Picture the car in your driveway, the one you actually drive, with solar panels on its roof. The
+		cars you're about to read about run over 600 km on a full charge (link to dust), but an everyday version wouldn't 
+		need a battery anywhere near that size, just something closer to a plug-in hybrid's. Since the average Australian 
+		drives only about 33 km a day (Link to budget direct), a solar roof could gather that much over 
+		a day in the sun, reducing a lifetime of fuel or electricity expenses to a fraction of what they are today.
+	  </p>
+	  <p class ="stage">
+		 
+		Bringing that within reach is what teams from around the world chase at the Bridgestone World Solar Challenge, 
+		a race across the Australian outback. The cars are split into classes, and the one built around that everyday idea is Cruiser, 
+		judged on practicality and energy use as well as outright speed. That is the class we raced in.
+	  </p>
+
+
+
+
+
+
+	   <!-- Disappearing quizlet? -->
+	   <b> The (Re)Build  </b>
+	   <!-- This challenge actually started off for deakin around 2023, where the team was under the name ASCEND. While most of my friends at the time
+	   were on this team I had arrived not too long ago in Australia and was still settling in. While this team did great considering it was a first 
+	   entry, the program was difficult for all parties involved and therefore no one was sure if it would run, so when I found out that the school 
+	   of engineering greenlit the project around mid 2024 I immedietly signed up, with some other signups including some of my friends from the first team who 
+	   intended on providing the new members insight before they graduated--> 
+	   <p>
+		Deakin's first run at the challenge had been in 2023, 
+		under the name ASCEND. I wasn't on that team, though most of my friends were, and I'd turned down a place earlier that year while I was 
+		still settling into Australia. The program had been hard enough on everyone that it wasn't clear the university would run it again, so 
+		when the School of Engineering greenlit a second entry in mid-2024, the students left over from the first team picked it up, and this 
+		time I signed up. 
+	   </p>	
+	   
+	   <!-- The Bridgestone World Solar Challenge (BWSC) is a biannual event and as we got approval half way through 2024 (Event was meant to start August 2025) this left us
+	   with barely a year of research, development, building and testing time. As we were short on time the car was cut down to the barebones; the 2023 Solar Car while innovative
+	   and won us the Sustainability award, it was bulky as it used 3D printed nylon and doors with Basalt fiber and this body also deformed/warped from the daily heating and overnight cooling
+	   so starting from scratch was overall better with us only reusing the expensive electronics for solar power regulation and motor control and some other electronics-->
+	   <p>
+		We started a year behind, with about half the usual two-year cycle to work with and the car they'd built in 2023 had tried to do too much at once. It came out heavier and more expensive than it needed 
+		to be, and its body had warped under the daily swing from outback heat to overnight cold. Patching it would only carry those problems 
+		forward, so we rebuilt from scratch and kept just the parts worth reusing, mostly the more expensive electronics.
+	   </p>
+	   
+	   
+	   	<div class="img-row">
+		  <figure>
+			<img class="smallimg" src="images/ascend1.jpg" alt="Former car, ASCEND ">
+			<figcaption>Pic 2: Previous Deakin Solar Car, "ASCEND" </figcaption>
+		  </figure>
+		  <figure>
+			<img class="smallimg" src="images/ascend2.jpg" alt="Modified former solar car chassis">
+			<figcaption>Pic 3: Modified ascend car chassis. </figcaption>
+		  </figure>
+		</div>
+
+	   <!--While all of this may have seemed very straightforward changes, these were influenced by new regulations for the BWSC 2025 which constricted the sunlight available and the battery allowance from 60KWh to 15kWh 
+	    altough a reduction in price due to overall increases in component prices it meant to save costs we built our new battery pack in house. While the old motors were generally efficient in terms of electric motors 
+		these had a much higher power spec, drawing more than we need to and required a drivetrain, we moved to motors (Marand Hub motors) which would be in the wheels themselves allowing a much higher efficiency as the battery was 
+		lighter more weight reductions were needed, this was mainly via the body of the car which was carbon fiber straight off the mold, exposed, all of these meant the car weight was around the 400kg mark. some other aspects of the 
+		project that needed rework were the sponsorship/public facing segment of the team which needed more attention to attract more funds, So i created a sponsorship framework based on publicly available data from motorsports 
+		teams and other solar teams-->
+	   <p>
+		A new set of regulations the year before shaped the rebuild. The race had moved to August, the first time it ran in winter, which meant 
+		around 20% less sun, and the Cruiser battery allowance dropped to 15 kWh, so we built our own pack in-house. We moved to Marand in-wheel 
+		motors that drive the wheel directly, and pulled the body off the mould in exposed carbon fibre, which brought the car down to around 400 kg.
+		We hadn't had a sponsorship framework before, so I built one and wrote all the content for the prospectus, then handed it to the media students to design.
+	   </p>	
+	   
+	   <!--The previous team was under the banner ASCEND but as we were moving away from title sponsors to be more independent, we changed to the name DUST (Deakin University Solar Team)
+	    . While earlier on in the project I started off as the team manager, running admin tasks, documentation submissions, team meetings and liasing with bridgestone, as i got closer to the end of my capstone project
+	    the time available i had for both projects drastically decreased and I had to step down from the team manager role just to manage the current team and personal project responsibilities I had effectively. -->
+	   <p>
+	     
+		The team also moved away from the ASCEND name to DUST, signifying our independence from the original sponsor, with new branding to match. I started as team manager, 
+		running the admin and the documentation for Bridgestone, but had to step back partway through as my VR capstone was running at the same time and needed more 
+		of my attention. 
+	   </p>
+	   
+	   
+	   	<div class="img-row">
+		<figure>
+			<img class="smallimg" src="images/prebodycar.jpg" alt="DUST Solar car without its body">
+			<figcaption>Pic 4:DUST car without the body. </figcaption>
+	    </figure>
+	    <figure>
+			<video class="smallimg" autoplay loop muted playsinline alt="First time the DUST Solar car moves">
+			  <source src="videos/firstmove.mp4" type="video/mp4">
+			</video>
+			<figcaption>vid x: First time it moved. </figcaption>
+	    </figure>
+
+		</div>
+		
+		
+		<!-- <img class="thumb" style="object-position: left center;" src="images/des2.jpeg" alt="Annual Bunnings Sausage Sizzle for Deakin Engineering Society"> -->
+		
+		
+		
+		<!-- add launch photos above -->
+	   <b> Road to Darwin  </b>
+	   <!-- By the time we got the carbon fiber body layup done we had most of the electrical work sorted out in the solar car and so we organised testing sessions 
+	   with the first being at a karting track while proper road testing was done on the AARC proving ground near Anglesea, who coicindetally later became a sponsor of 
+	   the team after engaging with us. Early on the power draw of the car was absurdly high as were doing rough tests without the body, but one we fitted the body our 
+	   power draw had a significant reduction which relieved us alot of stress. During testing I also got to drive the car as part of determining the best drivers to drive
+	   the solar car in the team-->
+	  
+	   
+	   <p>
+		Testing started before the body was on, first at a karting track and then at the AARC proving ground near Anglesea, who later came on as a sponsor. 
+		Early on, without the body the car drew an absurd amount of power, but thankfully with the body fitted the power draw came back close to what we'd hoped.
+		I got to drive the car myself one day, before the body went on, and rode in it as a passenger on another, and we put as many students behind the wheel as we could 
+		before narrowing it down based on gathered power draw/pedal data, to the six drivers we were allowed to register.
+	   </p>	
+	   
+	   
+	   <div class="img-row">
+	   <figure>
+		 <video class="smallimg" autoplay loop muted playsinline alt="Testing on a track in Anglesea">
+		  <source src="videos/testing.mp4" type="video/mp4">
+		 </video>
+		<figcaption>vid x: Testing of Solar Car. </figcaption>
+	   </figure>
+	   	<figure>
+		 <img class="smallimg" src="images/launch.jpg" alt="DUST Solar Car Launch">
+		 <figcaption>Pic x: Launch of the DUST Solar Car. </figcaption>
+		</figure>
+	   </div>
+	   
+	   <!-- By august we had our Car sent to Darwin where the challenge starts, in our truck, fitted with a ramp and a winch and loaded with swags, marquees, tooling, spares and supplies.
+	   When we arrived in Darwin only did we realize the true scale of the event, There were almost 40 teams with each team having between 15-40 members, along with event officials and 
+	   locals who were cheering along. For testing and working on the cars each team was provided a Pit (Sort of a work area where you can keep your tools and car) all based in Hidden Valley Raceway (supercars is also hosted here!)
+	   and with all these teams around the same area it was chaotic with everyone constantly going back and forth, filming, borrowing tools, doing runs to bunnings and combined with all teams using the same communications networks including 
+	   the local networks and starlkink the network speeds were barely sufficient for anything more than a few 100MB of downloads in a reasonable timeframe.-->
+	   <p>
+		By August the car was on its way to Darwin in our truck, fitted with a ramp and a winch and loaded with swags, marquees, tooling, spares and supplies. When we reached Darwin, we realized it was a whole
+		different ball game, with close to forty teams from around the world all working out of Hidden Valley Raceway  (circuit the Supercars use) and it was as chaotic 
+		as you'd expect from that many teams in one place, everyone building, filming and borrowing tools off each other at once. With every team leaning on the same few 
+		communications networks, mostly Starlink and the local carriers, speeds crawled, and sharing any footage or documents took far longer than it should have.
+	   </p>
+	
+	
+	   <div class="img-row">
+	   <figure>
+		 <img class="smallimg" src="images/welcome.jpg" alt="Welcome to Country ceremony in Darwin for all solar teams.">
+		 <figcaption>Pic x: Welcome to Country ceremony in Darwin. </figcaption>
+	   </figure>
+	   <figure>
+		 <img class="smallimg" src="images/teambbq.jpg" alt="Introduction BBQ for all teams.">
+		 <figcaption>Pic x: One of few events for teams to bond with each other. </figcaption>
+	   </figure>
+	   </div>
+		
+		
+		
+		
+		
+	
+	   <b> Scrutineering and Qualifying  </b>
+	   <!-- While most friends and family, when i conversed with them about the travel had this mentality of, "Oh it'll be a nice vacation" despite myself laying out the tasks at hand, and when we got to darwin
+	    the situation was apparent, while some of our team members who were essential for development arrived a week prior and were settled, when the rest of us arrived most teams were already present and we had to 
+		catch up on the day we arrived, and before we knew it, static scruitineering began. For us this involved our team leads, team manager engaging with the events scrutineers passing through stations, each assessing
+		the car on how well it complies with road laaws and event regulations, which after passing would grant us conditional road registration allowing driving on the stuart highway. For most of these majority of us
+		were passive observers as the car passed a station at a time and our team manager would give us updates as we progressed along. One activity some of us did get to engage was in egress station which checked if
+		all the assigned seated passengers and drivers can get out of the car in under 15 seconds while wearing the safety belts followed by a weight check and weight label that everyone had to wear for the rest of the 
+		competition-->
+	   
+	   <p>
+		In Darwin we went almost straight into static scrutineering, which turned out to be the harder of the two. It checks the car against its 
+		paperwork and the safety rules for public roads, down to an exit test where every driver and passenger has to get out within fifteen seconds 
+		and a weight check that adds ballast for anyone under 80 kg, and most of the design decisions had to be justified to the judges
+	   </p>	
+	   
+	   <div class="img-row">
+	   <figure>
+		 <video class="smallimg" autoplay loop muted playsinline style="object-position: bottom;" alt="Timed car exit done to make sure car occupants can leave the car quick in emergencies.">
+		  <source src="videos/quickexit.mp4" type="video/mp4">
+		 </video>
+		<figcaption>vid x: Timed exit test as part of scrutineering. </figcaption>
+	   </figure>
+	   	<figure>
+		 <img class="smallimg" src="images/measurement.jpg" alt="Suspension inspection done on solar car to check for roadworthiness.">
+		 <figcaption>Pic x: Suspension inspection for roadworthiness. </figcaption>
+		</figure>
+	   </div>
+	   
+	   <!-- Towards the end, while we passed majority of the checks, we had some which needed fixing which the team did over the next few days while also doing some ontrack testing. There was cruiser class design scores which 
+        determined the time every team had to stop and wait in addition to 30 minutes at the control stop at katherine, this was not our greatest strength as we design the car more for the race and not comfort and we expected
+        some extra time lost compared to our competitors which turned out to be the case. Besides the car related work there were also events by BWSC
+        for the attending participants which allowed all teams to mingle with each other and we also had a BBQ/Dinner with the Western Sydney Solar team who were in the same camping ground as us. Within a few days
+		we redid our static scrutineering passing it and did our dynamic scrutineering which involved figure 8 test, a slalom and a brake test which our car passed with ease. This was followed up by a hot lap for all 
+		the teams, for challenger class, this meant that the starting order off of darwin would be based on their position on the hotlap. While most teams did their laps, when it came to our turn we were feeling good,
+		specially as our driver was also someone who happen to test cars on a regular basis, So once he did the warm up lap with the car he was feeling confident and he was given the go ahead to push the car. In the end
+		when he passed the finish line, we got the time, It was 2 minutes 2.85 seconds,  cruiser class record for the circuit despite us later find out we had the speed limited on, capping the car at 110km/h and our driver
+		was confident he could push it even more if he got he lap. We found out later that our hotlap had no impact on our leaving order from Darwin which I found infuriating as this meant that the hotlap had no impact 
+		on the cruiser class.-->
+		
+	   <p>
+	    We had a few issues, worked through them over the next few days, and passed. Dynamic scrutineering was more straightforward, the timed hot 
+		laps around Hidden Valley that set the starting order. We posted the fastest cruiser lap of the event at 2 minutes 2.85 seconds, a Cruiser 
+		Class record for the circuit. We'd done it with the speed limiter still capped at 110 km/h, since no one had remembered to switch it off, so 
+		there was almost certainly more in the car than the time showed. 
+	   </p>
+	   
+	   
+	   <div class="img-row">
+	   	<figure>
+		 <img class="smallimg" src="images/fastlap1.jpg" alt="Solar car doing a warm up lap before starting a fast lap">
+		 <figcaption>Pic x: Lap prior to fast lap for Solar Car. </figcaption>
+		</figure>
+		<figure>
+		 <video class="smallimg" style="object-position: top;" autoplay loop muted playsinline alt="Solar car doing a warm up lap before starting a fast lap" >
+		  <source src="videos/fastlap.mp4"  type="video/mp4">
+		 </video>
+		<figcaption>vid x: Fast lap for the DUST Solar Car (Fastest car in the class!). </figcaption>
+	   </figure>
+	   </div>
+<!-- Dad speaking about other teams -->
+
+	   
+		
+		
+	   <b> Darwin to Adelaide  </b>
+	   <p>
+		Then came the race itself, five days from Darwin to Adelaide. Each team ran a convoy, at minimum a lead car ahead of the solar car and a chase 
+		car behind, and ours also had a scout running kilometres ahead to call back hazards like cattle grids, road works and animals, plus a media car 
+		filming the whole way. I rode in the lead car, where I kept tracking the teams near us and passed updates to our team manager, who ran that 
+		car and made the calls on who we might hold up or be held up by, and I kept an eye on the map for our progress and the spots we might camp at each night.
+	   </p>	
+	   
+	   
+	   
+	   <p>
+	    Each driving day ran to 5 pm, and holding the bare 60 km/h minimum would have burned the daylight down, especially with the lost sun, so we 
+		ran closer to 80, with a control stop every few hundred kilometres where the car sat untouched for half an hour while it was checked over. The 
+		Stuart Highway runs at up to 130, so for long stretches we had road trains overtaking us one after another, and because everyone shares UHF channel 40, 
+		we could hear exactly what the truckies felt about a line of solar cars sitting in their way and they were not shy about it.
+	   </p>
+	   <!-- Image above -->
+	   <p>
+		For most of those five days my role was behind the camera. The people who knew the car best handled the solar and motor problems as they came up, and 
+		I kept my gear ready for everything else, the driving, the landscape, the team at work.
+	   </p>	
+	   <p>
+	    A puncture meant the whole convoy pulling over at once and emptying onto the roadside, some crouched over the wheel while others stood out in the traffic 
+		with flags to keep cars and road trains off us. Nights were at camp, often at grounds with toilets and laundry, where I helped set up and cook, and away 
+		from the towns the sky was the best I've seen, with almost nothing to dull the stars.
+	   </p>
+	   <!-- Image above -->
+	   <b> The final day  </b>
+	   <p>
+		The morning opened with a thirty-minute hold while a storm sat over Adelaide, and once we were moving again the storm came to us, so we ran much of the 
+		last day on almost no sun and not much visibility. For a long stretch we were stuck behind a Japanese team we couldn't get past. An overtake is meant to be 
+		simple: you radio the car ahead to say you're coming through, and they ease over to let you by. We radioed ahead and got nothing back, tried again, and kept
+		crawling along behind them in the rain with the clock running, while the people in the back of their chase car signalled at us, none of which we could make 
+		sense of. It was only after the race that we found out why nothing had got through: their one translator had fallen asleep, so every message we'd sent had 
+		been landing on a car where no one could understand a word of it
+	   </p>
+	   
+	   <p>
+	    We made it to the edge of Adelaide and passed a few of the cars we'd been chasing, but Mission Control pulled us over at the 5:45 pm cut-off, 24 km short of 
+		the finish line. We spent two more days in the city, trading stories with the other teams, then drove the cars in to the official finish for photographs and 
+		left them on display for the public. There was also a thirty-minute time penalty hanging over us from earlier in the race, given for an incident that turned 
+		out to be unfounded. It was overturned afterwards, too late to count, though it could have changed where we finished had the call come during the race rather 
+		than after it.
+	   </p>
+	   
+	   <p>
+	    The event closed with an awards ceremony that ran through what every team had managed to pull off, which after five days on the same road together felt less 
+		like a competition than a room full of people who'd all just done the same hard thing. Then it was the unglamorous end of any big project: pack up, clear the 
+		site, and the long drive back to Melbourne, where a short debrief mostly meant cleaning the gear and putting it away. For all the build-up, it finished the way 
+		these things usually do, with a car in pieces of equipment to be washed and a team quietly worn out. Looking back there are plenty of things I'd do differently, 
+		but for a first rebuild on half the usual time, I'm glad we got as far as we did.
+	   </p>
+	   
+	   
+    </section>
+
+    <section class="detail" id="maze">
+      <h2>Mouse Maze robot</h2>
+      <div class="hero g1">image</div>
+      <p>
+        For my Mechatronics Design unit I built a small autonomous robot to solve a three-stage
+        course — a spiral, a causeway, and a full maze — running on an STM32 microcontroller. The
+        brief was to finish within four minutes; after a lot of sensor tuning, motor-control tweaking,
+        and repeat test runs, mine got through in under two. Most of what I took from it wasn’t in the
+        original plan — it came from the debugging, the things that didn’t work, and slowly turning a
+        pile of parts into something that could find its own way out.
+      </p>
+    </section>
+
+    <hr class="rule" style="margin-top:8px;">
+    <footer>© 2026 Anushka Sooriyaarachchi · <a href="index.html">home</a></footer>
+  </div>
+</body>
+</html>
+
+
+
